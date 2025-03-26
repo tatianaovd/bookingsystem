@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-bookings
+      author: tetiana
+      changes:
+        - createTable:
+            tableName: bookings
+            schemaName: booking_schema
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: unit_id
+                  type: BIGINT
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: start_date
+                  type: DATE
+              - column:
+                  name: end_date
+                  type: DATE
+              - column:
+                  name: status
+                  type: VARCHAR(50)
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+        - addForeignKeyConstraint:
+            schemaName: booking_schema
+            baseTableName: bookings
+            baseColumnNames: unit_id
+            referencedTableName: units
+            referencedColumnNames: id
+            constraintName: fk_bookings_unit
+        - addForeignKeyConstraint:
+            schemaName: booking_schema
+            baseTableName: bookings
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_bookings_user
+
+#  - changeSet:
+#      id: add-fk-to-bookings
+#      author: tetiana
+#      changes:
+#        - addForeignKeyConstraint:
+#            schemaName: booking_schema
+#            baseTableName: bookings
+#            baseColumnNames: unit_id
+#            referencedTableName: units
+#            referencedColumnNames: id
+#            constraintName: fk_bookings_unit
+#        - addForeignKeyConstraint:
+#            schemaName: booking_schema
+#            baseTableName: bookings
+#            baseColumnNames: user_id
+#            referencedTableName: users
+#            referencedColumnNames: id
+#            constraintName: fk_bookings_user

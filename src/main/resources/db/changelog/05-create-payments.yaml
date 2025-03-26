@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-payments
+      author: tetiana
+      changes:
+        - createTable:
+            tableName: payments
+            schemaName: booking_schema
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: booking_id
+                  type: BIGINT
+              - column:
+                  name: paid
+                  type: BOOLEAN
+              - column:
+                  name: created_at
+                  type: TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        - addForeignKeyConstraint:
+            baseTableName: payments
+            baseColumnNames: booking_id
+            referencedTableName: bookings
+            referencedColumnNames: id
+            referencedSchemaName: booking_schema
+            constraintName: fk_payments_booking

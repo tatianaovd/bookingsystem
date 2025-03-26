@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-units
+      author: tetiana
+      changes:
+        - createTable:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: rooms
+                  type: INT
+              - column:
+                  name: type
+                  type: VARCHAR(50)
+              - column:
+                  name: floor
+                  type: INT
+              - column:
+                  name: cost
+                  type: DECIMAL(10,2)
+              - column:
+                  name: description
+                  type: TEXT

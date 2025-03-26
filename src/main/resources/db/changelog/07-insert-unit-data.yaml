@@ -1,0 +1,114 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-unit-data
+      author: tetiana
+      changes:
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 2 }
+              - column: { name: type, value: "HOME" }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: cost, valueNumeric: 100.00 }
+              - column: { name: description, value: "Cozy home near the park" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 2 }
+              - column: { name: type, value: "HOME" }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: cost, valueNumeric: 120.00 }
+              - column: { name: description, value: "Cozy home near the park" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 3 }
+              - column: { name: type, value: "FLAT" }
+              - column: { name: floor, valueNumeric: 5 }
+              - column: { name: cost, valueNumeric: 90.00 }
+              - column: { name: description, value: "Spacious flat downtown" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 4 }
+              - column: { name: type, value: "APARTMENTS" }
+              - column: { name: floor, valueNumeric: 10 }
+              - column: { name: cost, valueNumeric: 150.00 }
+              - column: { name: description, value: "Luxury apartments with sea view" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 1 }
+              - column: { name: type, value: "HOME" }
+              - column: { name: floor, valueNumeric: 0 }
+              - column: { name: cost, valueNumeric: 80.00 }
+              - column: { name: description, value: "Small house near the lake" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 2 }
+              - column: { name: type, value: "FLAT" }
+              - column: { name: floor, valueNumeric: 2 }
+              - column: { name: cost, valueNumeric: 95.00 }
+              - column: { name: description, value: "Flat near city center" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 5 }
+              - column: { name: type, value: "APARTMENTS" }
+              - column: { name: floor, valueNumeric: 15 }
+              - column: { name: cost, valueNumeric: 200.00 }
+              - column: { name: description, value: "Penthouse apartment" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 3 }
+              - column: { name: type, value: "HOME" }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: cost, valueNumeric: 110.00 }
+              - column: { name: description, value: "Family home with garden" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 2 }
+              - column: { name: type, value: "FLAT" }
+              - column: { name: floor, valueNumeric: 4 }
+              - column: { name: cost, valueNumeric: 85.00 }
+              - column: { name: description, value: "Flat near university" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 1 }
+              - column: { name: type, value: "APARTMENTS" }
+              - column: { name: floor, valueNumeric: 7 }
+              - column: { name: cost, valueNumeric: 70.00 }
+              - column: { name: description, value: "Studio apartment" }
+
+        - insert:
+            tableName: units
+            schemaName: booking_schema
+            columns:
+              - column: { name: rooms, valueNumeric: 6 }
+              - column: { name: type, value: "HOME" }
+              - column: { name: floor, valueNumeric: 2 }
+              - column: { name: cost, valueNumeric: 250.00 }
+              - column: { name: description, value: "Luxury villa with pool" }

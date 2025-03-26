@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-events
+      author: tetiana
+      changes:
+        - createTable:
+            tableName: events
+            schemaName: booking_schema
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: unit_id
+                  type: BIGINT
+              - column:
+                  name: event_type
+                  type: VARCHAR(50)
+              - column:
+                  name: created_at
+                  type: TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        - addForeignKeyConstraint:
+            baseTableName: events
+            baseColumnNames: unit_id
+            referencedTableName: units
+            referencedColumnNames: id
+            referencedSchemaName: booking_schema
+            constraintName: fk_events_unit
